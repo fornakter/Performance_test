@@ -12,7 +12,6 @@ for a in range(5):
     result_table.append(result)
 
 for o in range(1, 5):
-    print(o)
     result_table[0] += result_table[o]
 print(result_table[0])
 
