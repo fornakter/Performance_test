@@ -1,13 +1,18 @@
-import timeit
+import datetime
 result_table = []
 
-start = timeit.timeit()
-for a in range(10):
-    for i in range(10000000):
+
+for a in range(5):
+    start = datetime.datetime.now()
+    for i in range(100000000):
         i += 1
-    end = timeit.timeit()
-    result = (start - end)*10
-    print(f'Test nr {a}: {round(result, 6)}')
+    end = datetime.datetime.now()
+    result = (end - start)
+    print(f'Test nr {a}: {result}')
     result_table.append(result)
 
-print(sum(result_table))
+for o in range(1, 5):
+    print(o)
+    result_table[0] += result_table[o]
+print(result_table[0])
+
